@@ -1,0 +1,4 @@
+@EndUserText.label: 'Numbering Demo Managed'
+define service ZSD_Carrier_N {
+  expose Z_C_CARRIER_UUID as Carrier;
+}
