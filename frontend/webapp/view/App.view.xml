@@ -1,0 +1,32 @@
+<mvc:View controllerName="carriermgmt.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns="sap.m">
+    <App >
+    <Page id="page" title="{i18n>title}">
+        <smartTable:SmartTable 
+                        id="listReportSmartTable" 
+                        smartFilterId="listReportSmartFilterBar" 
+                        entitySet="Carrier"  
+                        tableType="ResponsiveTable"
+                        showTablePersonalisation="true"
+                        
+                        header="Carriers"
+                        showRowCount="true"
+                        initiallyVisibleFields="CarrierId,Name,CurrencyCode,LastChangedAt"
+                        requestAtLeastFields="CarrierId,Name,CurrencyCode,LastChangedAt,HasDraftEntity,DraftEntityCreationDateTime"
+                        persistencyKey="SmartTableOrders"
+                        enableAutoBinding="true"
+                        beforeRebindTable="onBeforeRebindItem">
+
+                        <smartTable:customToolbar>
+                            <OverflowToolbar id="_IDGenOverflowToolbar" design="Transparent">
+                                <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+                                <Button id="_IDGenButton" text="Create" press=".onCreateButtonPress" />
+                            </OverflowToolbar>
+                        </smartTable:customToolbar>
+                    
+                    </smartTable:SmartTable>
+    </Page>
+    </App>
+</mvc:View>
